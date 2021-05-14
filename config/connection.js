@@ -1,31 +1,60 @@
-const Sequelize = require("sequelize");
+// import all models
+const Post = require('./Post');
+const User = require('./User');
+const Comment = require('./Comment');
 
-require("dotenv").config(); 
-const sequelize = process.env.JAWSDB_URL
-  ? new Sequelize(process.env.JAWSDB_URL)
-  : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
-      host: "localhost",
-      dialect: "mysql",
-      dialectOptions: {
-        decimalNumbers: true,
-      },
-    });
-// if (process.env.JAWSDB_URL) {
-//   //we have jawsdb
-//   console.log("We have and will use jawsdb!");
-//   sequelize = new Sequelize(process.env.JAWSDB_URL);
-// } else {
-//   //otherwise connect to local db
-//   sequelize = new Sequelize(
-//     process.env.DB_NAME, //vars set up in .env
-//     process.env.DB_USER,
-//     process.env.DB_PW,
-//     {
-//       host: "localhost",
-//       dialect: "mysql",
-//       port: 3306,
-//     }
-//   );
-// }
+// create associations
+User.hasMany(Post, {
+  foreignKey: 'user_id'
+});
 
-module.exports = sequelize;
+Post.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
+
+User.belongsToMany(Post, {
+  through: Vote,
+  as: 'voted_posts',
+
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
+
+Post.belongsToMany(User, {
+  through: Vote,
+  as: 'voted_posts',
+  foreignKey: 'post_id',
+  onDelete: 'SET NULL'
+});
+
+Vote.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
+
+Vote.belongsTo(Post, {
+  foreignKey: 'post_id',
+  onDelete: 'SET NULL'
+});
+
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
+
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id',
+  onDelete: 'SET NULL'
+});
+
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
+
+Post.hasMany(Comment, {
+  foreignKey: 'post_id'
+});
+
+module.exports = { User, Post, Comment };
