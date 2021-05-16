@@ -1,5 +1,5 @@
 {
-  "name": "MVC-TechBlog",
+  "name": "mvc-techblog",
   "description": "Testing heroku server",
   "main": "server.js",
   "scripts": {
@@ -16,5 +16,17 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.5.0",
     "serve-favicon": "^2.5.0"
-  }
+  },
+  "version": "1.0.0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WuJoh/MVC-TechBlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WuJoh/MVC-TechBlog/issues"
+  },
+  "homepage": "https://github.com/WuJoh/MVC-TechBlog#readme"
 }
