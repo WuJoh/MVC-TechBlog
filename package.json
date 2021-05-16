@@ -20,6 +20,7 @@
   "homepage": "https://github.com/WuJoh/MVC-TechBlog#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "common": "^0.2.5",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
