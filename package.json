@@ -1,32 +1,33 @@
 {
-  "name": "mvc-techblog",
-  "description": "Testing heroku server",
+  "name": "tech-blog",
+  "version": "1.0.0",
+  "description": "A demo blog that uses Node.js with express-session to deliver content from a database.",
   "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "connect-session-sequelize": "^7.1.1",
-    "dotenv": "^8.6.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.1",
-    "express-session": "^1.17.1",
-    "handlebars": "^4.7.7",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.6.2",
-    "serve-favicon": "^2.5.0"
-  },
-  "version": "1.0.0",
   "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WuJoh/MVC-TechBlog.git"
   },
-  "author": "",
+  "author": "Johnny Wu",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/WuJoh/MVC-TechBlog/issues"
   },
-  "homepage": "https://github.com/WuJoh/MVC-TechBlog#readme"
+  "homepage": "https://github.com/WuJoh/MVC-TechBlog#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0",
+    "serve-favicon": "^2.5.0"
+  }
 }
