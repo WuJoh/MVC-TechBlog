@@ -1,0 +1,92 @@
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+
+ol.post-list {
+    margin: 0;
+    padding: 0;
+}
+
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.meta {
+    color: lightblue;
+}
+
+.post-list li {
+    list-style-type: none;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    flex: 0 1 24%;
+    border-radius: 5px;
+    margin: 0.25%;
+    padding-left: 0.125%;
+    padding-right: 0.125%;
+    padding-bottom: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.comment-form {
+    margin-bottom: 5%;
+}
+
+.comment {
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+.comment .meta {
+    font-size: 90%;
+    margin-bottom: .5%;
+    opacity: .6;
+}
+
+.comment:nth-child(odd) {
+    background-color: #dfdddb;
+}
+
+form>div {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+}
+
+.new-post-form input {
+    width: 100%;
+}
+
+.edit-post-form {
+    margin-bottom: 5%;
+}

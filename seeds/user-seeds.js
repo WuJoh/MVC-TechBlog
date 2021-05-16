@@ -3,55 +3,45 @@ const { User, Post } = require('../models');
 
 const userdata = [
   {
-    username: 'alesmonde0',
-    email: 'nwestnedge0@cbc.ca',
+    username: 'johnnywu',
+    email: 'johnny.wu@tech.ca',
     password: 'password123'
   },
   {
-    username: 'jwilloughway1',
-    email: 'rmebes1@sogou.com',
+    username: 'mason',
+    email: 'mason@tech.ca',
     password: 'password123'
   },
   {
-    username: 'iboddam2',
-    email: 'cstoneman2@last.fm',
+    username: 'joan',
+    email: 'joan@tech.ca',
     password: 'password123'
   },
   {
-    username: 'dstanmer3',
-    email: 'ihellier3@goo.ne.jp',
+    username: 'ginger',
+    email: 'ginger@tech.ca',
     password: 'password123'
   },
   {
-    username: 'djiri4',
-    email: 'gmidgley4@weather.com',
+    username: 'friedchicken',
+    email: 'friedchicken@tech.ca',
     password: 'password123'
   },
   {
-    username: 'msprague5',
-    email: 'larnout5@imdb.com',
+    username: 'orangejuice',
+    email: 'tropicana@tech.ca',
     password: 'password123'
   },
   {
-    username: 'mpergens6',
-    email: 'hnapleton6@feedburner.com',
+    username: 'amazingspiderman',
+    email: 'spiderman@tech.ca',
     password: 'password123'
   },
   {
-    username: 'tpenniell7',
-    email: 'kperigo7@china.com.cn',
+    username: 'hulksmash',
+    email: 'bruce.banner@tech.ca',
     password: 'password123'
   },
-  {
-    username: 'msabbins8',
-    email: 'lmongain8@google.ru',
-    password: 'password123'
-  },
-  {
-    username: 'jmacarthur9',
-    email: 'bsteen9@epa.gov',
-    password: 'password123'
-  }
 ];
 
 const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});

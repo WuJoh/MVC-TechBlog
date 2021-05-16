@@ -1,9 +1,8 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment, Vote } = require('../models');
-const withAuth = require('../utils/auth');
+const { Post, User, Comment } = require('../models');
+const withAuth = require('../src/auth');
 
-// get all posts for dashboard
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('======================');
@@ -13,10 +12,9 @@ router.get('/', withAuth, (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'content',
+      'created_at'
     ],
     include: [
       {
@@ -47,10 +45,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
       'id',
-      'post_url',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'content',
+      'created_at'
     ],
     include: [
       {
@@ -85,3 +82,4 @@ router.get('/edit/:id', withAuth, (req, res) => {
 });
 
 module.exports = router;
+

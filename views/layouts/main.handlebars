@@ -2,38 +2,37 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Tech News</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-  <div class="wrapper">
     <header>
-      <h1>
-        <a href="/">Just Tech News</a>
-      </h1>
-      <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+        <nav>
+            <ul>
+                <li><a href="/">Main</a></li>
+                {{#if loggedIn}}
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="#"><span id="logout">Logout</a></span></li>
+                {{else}}
+                <li> <a href="/login">Login</a></li>
+                {{/if}}
+            </ul>
+        </nav>
     </header>
     <main>
-      {{{ body }}}
+        {{{body}}}
     </main>
     <footer>
-      Thanks for visiting!
+        © Johnny Wu Developer 2021
     </footer>
-  </div>
-  
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
 </body>
+
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
 
 </html>
