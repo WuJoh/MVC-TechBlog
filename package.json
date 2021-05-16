@@ -14,7 +14,7 @@
     "express-session": "^1.17.1",
     "handlebars": "^4.7.7",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.5.0",
+    "sequelize": "^6.6.2",
     "serve-favicon": "^2.5.0"
   },
   "version": "1.0.0",
